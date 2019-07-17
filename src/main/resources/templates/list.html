@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
 
@@ -13,20 +14,21 @@
     <table>
         <tr><th>Name</th><th>Description</th><th>Priority</th><th>Due Date</th><th>Completed?</th><th>Actions</th></tr>
         <tr th:each="item : ${list}">
-            <a th:href="@{/detail/{id}(id=${item.id})}">
-                <td th:text="${item.name}}"></td>
-                <td th:text="${item.description}}"></td>
-                <td th:text="${item.priority}}"></td>
-                <td th:text="${item.dueDate}}"></td>
-
-                <div th:switch="${item.isCompleted}}">
-                    <td th:case="true" class="glyphicon glyphicon-ok-circle"></td>
-                    <td th:case="false" class="glyphicon glyphicon-exclamation-sign"></td>
-                </div>
-            </a>
+            <!--<a th:href="@{/detail/{id}(id=${item.id})}" style="cursor: pointer;">-->
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.description}"></td>
+                <td th:text="${item.priority}"></td>
+                <td th:text="${item.dueDate}"></td>
+                <td th:text="${item.isCompleted}"></td>
+                <!--<td th:switch="${item.isCompleted}">-->
+                    <!--<i th:case="true" class="fa fa-check-circle"></i>-->
+                    <!--<i th:case="false" class="fa fa-exclamation-circle"></i>-->
+                <!--</td>-->
+            <!--</a>-->
             <td>
-                <a th:href="@{/update/{id}(id=${item.id})}"></a>
-                <a th:href="@{/delete/{id}(id=${item.id})}"></a>
+                <a th:href="@{/detail/{id}(id=${item.id})}">Details</a>
+                <a th:href="@{/update/{id}(id=${item.id})}">Update</a>
+                <a th:href="@{/delete/{id}(id=${item.id})}">Delete</a>
             </td>
         </tr>
 

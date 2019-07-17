@@ -31,7 +31,7 @@ public class ToDoList {
     @Size(min=1)
     private String dueDate;
 
-    private boolean isCompleted;
+    private String isCompleted;
 
     public long getId() {
         return id;
@@ -73,11 +73,11 @@ public class ToDoList {
         this.dueDate = dueDate;
     }
 
-    public boolean isCompleted() {
+    public String getIsCompleted() {
         return isCompleted;
     }
 
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
+    public void setIsCompleted(String completed) {
+        this.isCompleted = completed;
     }
 }

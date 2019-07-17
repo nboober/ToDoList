@@ -4,20 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
 
-    <a th:href="/">Show To Do List</a>
+    <a href="/">Show To Do List</a><br/>
 
-    Name: <span th:text="${item.name}"/><br/>
-    Description: <span th:text="${item.description}"/><br/>
-    Priority: <span th:text="${item.priority}"/><br/>
-    Due Date: <span th:text="${item.dueDate}"/><br/>
-    Completed?
-    <span th:switch="${item.isCompleted}">
-        <span th:case="true" class="glyphicon glyphicon-ok-circle"/>
-        <span th:case="false" class="glyphicon glyphicon-exclamation-sign"/>
-    </span>
+    Name: <span th:text="${item.name}"></span><br/>
+    Description: <span th:text="${item.description}"></span><br/>
+    Priority: <span th:text="${item.priority}"></span><br/>
+    Due Date: <span th:text="${item.dueDate}"></span><br/>
+    Completed? <span th:text="${item.isCompleted}"/>
+    <!--<div th:switch="${item.isCompleted}">-->
+        <!--<i th:case="true" class="fa fa-check-circle"></i>-->
+        <!--<i th:case="false" class="fa fa-exclamation-circle"></i>-->
+        <!--<i th:case="*" th:text="${item.isCompleted}"></i>-->
+    <!--</div>-->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

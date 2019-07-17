@@ -25,7 +25,7 @@ public class HomeController {
     }
 
     @GetMapping("/add")
-    public String itemForm(Model model){
+    public String formItem(Model model){
         model.addAttribute("item", new ToDoList());
         return "itemForm";
     }
@@ -48,10 +48,10 @@ public class HomeController {
     @RequestMapping("/update/{id}")
     public String updateItem(@PathVariable("id") long id, Model model){
         model.addAttribute("item", listRepository.findById(id).get());
-        return "itemUpdate";
+        return "itemForm";
     }
 
-    @RequestMapping("/delete/${id}")
+    @RequestMapping("/delete/{id}")
     public String deleteItem(@PathVariable("id") long id){
         listRepository.deleteById(id);
         return "redirect:/";
