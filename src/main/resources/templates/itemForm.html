@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="#" th:action="@{/process}" th:object="${list}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        Name: <input type="text" th:field="*{name)"/>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/><br/>
+
+        Description: <textarea type="text" th:field="*{description}"/>
+        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"/><br/>
+
+        Priority:<input type="number" th:field="*{priority}"/>
+        <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"/><br/>
+
+        Due Date:<input/>
+        Completed? <input type="radio" th:field="*{isCompleted}"/><br/>
+
+        <input type="submit" value="Add"/>
+    </form>
+
+</body>
+</html>
